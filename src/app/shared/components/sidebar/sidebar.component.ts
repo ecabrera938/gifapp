@@ -7,13 +7,13 @@ import { GifsService } from 'src/app/gifs/services/gifs-service.service';
   styleUrls: ['./sidebar.component.css'],
 })
 export class SidebarComponent {
-
   constructor(private gifService: GifsService) {}
 
-  get tags(){
+  get tags(): string[] {
     return this.gifService.tagHistory;
   }
 
- 
-
+  tagOfList(tag: string): void {
+    this.gifService.searchTag(tag);
+  }
 }
